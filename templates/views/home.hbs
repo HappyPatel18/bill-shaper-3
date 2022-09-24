@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+<link rel="manifest" href="./img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="./img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Billshaper</title>
+  </head>
+  <body>
+<section class="container ">
+  <aside>
+    <div class="sidebar-top">
+      <div class="logo">
+        <img src="../img/logo.png" alt="logo" />
+      </div>
+      <div class="close" id="close">
+        <span class="material-icons-sharp">
+          close
+          </span>
+      </div>
+    </div>
+    <div id="sidebar" class="sidebar">
+      <a href="/users/getMultipleFiles" class="active">
+        <span class="material-icons-sharp">
+          grid_view
+          </span>
+          <h3>Dashboard</h3>
+      </a>
+      <a href="/users/upload" class="">
+        <span class="material-icons-sharp">
+          receipt
+            </span>
+          <h3>Lower a new bill</h3>
+      </a>
+      <a href="/users/getMultipleFiles">
+        <span class="material-icons-sharp">
+          receipt_long
+          </span>
+          <h3>Manage payments and notification</h3>
+      </a>
+
+      <div class="sidebarBottom">
+        <a href="#">
+          <span class="material-icons-sharp">
+            help_outline
+            </span>
+            <h3>Help</h3>
+        </a>
+        <a href="#">
+          <span class="material-icons-sharp">
+            contact_support
+            </span>
+            <h3>Get Help</h3>
+        </a>
+        <a href="#">
+          <span class="material-icons-sharp">
+            list_alt
+            </span>
+            <h3>Read Teams</h3>
+        </a>
+        <a href="/logout">
+          <span class="material-icons-sharp">
+            logout
+            </span>
+            <h3>Sign Out</h3>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+
+
+  <main class="mainContent">
+    <div class="box">
+          {{#if message}}
+                  <div class="alert alert-success">
+                      {{message}}
+                  </div>
+              {{/if}}
+      <h1 class="title"><span class="text-primary">Lower</span> a new bill</h1>
+      
+      <form action="/users/multipleFileUpload" method="post" enctype="multipart/form-data">
+      <label for="provider">Select a provider for us to get to work!</label>
+      <select name="serviceProvider" id="provider" required>
+        <option value="">Select a provider</option>
+        {{#each records}}
+                    <option value="{{this.name}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+      <label for="ssn">Social security</label>
+      <input onkeypress="return onlyNumberKey(event)"  type="text" maxlength="4"  name="sinNumber" id="sinNumber" placeholder="Last 4 of SSN" required/>
+
+       <label for="ssn">Credit Card</label>
+      <input onkeypress="return onlyNumberKey(event)"  type="text" maxlength="4" name="ccNumber" id="ccNumber" placeholder="Last 4 of Credit Card" required/>
+    
+      <label for="msg">Thinks we should know</label>
+      <textarea name="note" id="note" rows="5" placeholder="'I recently tried to negotiate this bill myself.' or 'I've been a customer for 6 years.'"></textarea>
+     
+      <input type="file" name="files" id="files" accept="image/jpeg,image/png,image/jpg,application/pdf" multiple required>
+       <div id="selectedFiles"></div>
+
+      <input type="submit" value="Continue" name="submit" class="btn btn-primary">
+    
+    <p class="center">Or</p><br>
+    <input type="button" data-toggle="modal" data-target="#myModal" value="I dont't have my bill statement" name="submit" class="btn btn-primary">
+    {{!-- <a href="/auth/google" data-toggle="modal" data-target="#myModal" type="button" style="text-align:center;"  class="btn btn-primary fb center" id="submitbtn">I dont't have my bill statement</a> --}}
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">We need a few details about your bill so that we can get access to negotiate. Any fields marked with a red asterisk * are required.</h4>
+        </div>
+        <div class="modal-body">
+
+     
+      <label for="service_address">SERVICE ADDRESS</label>
+      <input  type="text"  name="service_address" id="service_address" placeholder="123 Main St,Apt 1,Anytown USA" />
+      <p>Please make sure to include your city or zip code</p><br>
+
+       <label for="account_number">ACCOUNT NUMBER</label>
+      <input type="text"  name="account_number" id="account_number" placeholder="12345678" />
+    
+      <label for="accountholder_name">ACCOUNT HOLDER'S NAME</label>
+      <input type="text" name="accountholder_name" id="accountholder_name" placeholder="Jane Doe" />
+    
+      <label for="pin_code">PIN/PASSCODE (IF SET)</label>
+      <input type="text"  name="pin_code" id="pin_code" placeholder="1234" />
+      <p>If you've set a security authorization code with DirecTV or AT&T, enter that here. If not, you can skip this one.</p><br>
+      
+      {{!-- <input type="submit" value="Continue" name="submit" class="btn btn-primary"> --}}
+      <button type="submit" value="Continue" name="submit"  class="btn btn-primary">Continue</button>
+
+    </form>
+        <p class="center">Or</p>
+
+        </div>
+        {{!-- <div class="modal-footer"> --}}
+          <button type="button" name="submit" data-dismiss="modal" class="btn btn-primary">ACTUALLY, I DO HAVE MY BILL STATEMENT</button>
+
+          {{!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> --}}
+        {{!-- </div> --}}
+      </div>
+      
+    </div>
+  </div>
+
+    </div>
+
+
+
+  
+
+
+  </main>
+
+  <div class="mobileHeader">
+    <div class="logo">
+      <img src="./img/logo.png" alt="logo" />
+    </div>
+    <div class="menutogler" id="menubtn">
+      <span class="material-icons-sharp">
+        menu
+        </span>
+    </div>
+  </div>
+</section>
+<script src="/js/main.js"></script>
+
+<script>
+  var selDiv = "";
+		
+	document.addEventListener("DOMContentLoaded", init, false);
+	
+	function init() {
+		document.querySelector('#files').addEventListener('change', handleFileSelect, false);
+		selDiv = document.querySelector("#selectedFiles");
+	}
+		
+	function handleFileSelect(e) {
+		
+		if(!e.target.files) return;
+		
+		selDiv.innerHTML = "";
+		
+		var files = e.target.files;
+		for(var i=0; i<files.length; i++) {
+			var f = files[i];
+			
+			selDiv.innerHTML += f.name + "<br/>";
+
+		}
+		
+	}
+
+   function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+</script>
+
+
+    </body>
+   </html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+<link rel="manifest" href="./img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="../img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Admin | Billshaper</title>
+  </head>
+  <body>
+<section class="container ">
+  <aside>
+    <div class="sidebar-top">
+      <div class="logo">
+        <img src="/img/logo.png" alt="logo" />
+      </div>
+      <div class="close" id="close">
+        <span class="material-icons-sharp">
+          close
+          </span>
+      </div>
+    </div>
+    <div id="sidebar" class="sidebar">
+      <a href="/admin/goToDashboard" class="active">
+        <span class="material-icons-sharp">
+            admin_panel_settings
+            </span>
+          <h3>Admin</h3>
+      </a>
+      <a href="#">
+        <span class="material-icons-sharp">
+            receipt
+            </span>
+          <h3>Bills</h3>
+      </a>
+      <a href="#">
+        <span class="material-icons-sharp">
+            account_circle
+            </span>
+            <h3>Users</h3>
+      </a>
+      <a href="/admin/logout">
+          <span class="material-icons-sharp">
+            logout
+            </span>
+            <h3>Sign Out</h3>
+        </a>
+    </div>
+  </aside>
+  <main class="mainContent">
+
+
+  <div class="content">
+
+        <div class="container" style="justify-content:center;">
+          <div class="row">
+              <div class="col-sm-3" style="justify-content:center;">
+                <img  src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="profile img" class="rounded-circle" width="150">
+              </div><br>
+              <div class="col-sm-9">
+              <div class="card mb-3">
+                <div class="card-body">
+              {{#each user}}
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{this.firstname}} {{this.lastname}}
+                    </div>
+                  </div>
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{this.email}}
+                    </div>
+                  </div>
+                  <hr>
+                {{/each}}
+          {{#each files}}
+              {{#if @first}}
+                 <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">SSN</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{this.ssn}}
+                    </div>
+                  </div>
+                  <hr>
+                 
+                 <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Credit Card</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{this.ccn}}
+                    </div>
+                  </div>
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Note </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{this.note}}
+                    </div>
+                  </div>
+                  <hr>
+
+                  {{/if}}
+                  {{/each}}
+                </div>
+              </div>
+              </div>
+          </div>
+        </div>
+<br>
+   
+       
+
+  <div class="datatable">
+    <table>
+            <thead>
+            <tr>
+              <th>Bill No</th>
+              <th>File Name</th>
+              <th>Service Provider</th>
+              <th>File Status</th>
+              <th>Amount Saved</th>
+
+            </tr>
+            </thead>
+            <tbody id="users">
+                  {{#each files}}
+                  <tr>
+                    <td  id="fileUserEmail" style=" text-align: left;">{{this._id}}</td>
+                    <td  style=" text-align: left;"><a href="/{{this.filepath}}">{{this.filename}}</a></td>
+                    <td  style=" text-align: left;">{{this.serviceprovider}}</td> 
+                    <td  style=" text-align: left;"> {{this.filestatus}}</td>
+                    <td  style=" text-align: left;">$ {{this.filesavedamount}}</td>
+
+                  </tr>
+                  {{/each}}
+
+
+                </tbody>
+
+                {{!-- pending,processing,accepted,rejected,completed. --}}
+
+          </table>
+          </div><br><br>
+
+<div class="datatable">
+    <table>
+            <thead>
+            <tr>
+              <th>Question</th>
+              <th>Provider</th>
+            </tr>
+            </thead>
+            <tbody id="users">
+                  {{#each questions}}
+                  <tr>
+                    <td  id="fileUserEmail" style=" text-align: left;">{{this.user_question}}</td>
+                    <td  id="fileUserEmail" style=" text-align: left;">{{this.user_provider}}</td>
+
+                  </tr>
+                  {{/each}}
+                </tbody>
+          </table>
+          </div><br><br>
+
+{{#if Message1}}
+<div class="datatable">
+    <table>
+            <thead>
+            <tr>
+              <th>Cancellation Date</th>
+              <th>Final Billing Address for refund check to be sent </th>
+              <th>Reason for Cancellation</th>
+              <th>Best Email Address</th>
+            </tr>
+            </thead>
+            <tbody id="users">
+                  {{#each questions}}
+                  <tr>
+                    <td  id="fileUserEmail" style=" text-align: left;">{{this.cancellation_date}}</td>
+                    <td  id="fileUserEmail" style=" text-align: left;">{{this.billing_address}}</td>
+                    <td  id="fileUserEmail" style=" text-align: left;">{{this.cancellation_reason}}</td>
+                    <td  id="fileUserEmail" style=" text-align: left;">{{this.email_address}}</td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+          </table>
+          </div> <br><br>
+    {{/if}}
+
+{{#if Message2}}
+  <div class="datatable">
+    <table>
+            <thead>
+            <tr>
+              <th>Equipment type?(Modem/Cable Box) </th>
+              <th>Monthly paying for this unreturned/inactive equipment</th>
+              <th>Reason for unreturned equipment ?</th>
+            </tr>
+            </thead>
+            <tbody id="users">
+                  {{#each questions}}
+                  <tr>
+                    <td  id="fileUserEmail" style=" text-align: left;">{{this.type_equipment}}</td>
+                    <td  id="fileUserEmail" style=" text-align: left;">{{this.monthly_payment}}</td>
+                    <td  id="fileUserEmail" style=" text-align: left;">{{this.unreturned_reason}}</td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+          </table>
+          </div>        
+ {{/if}}
+  </div>
+</main>
+
+  <div class="mobileHeader">
+    <div class="logo">
+      <img src="./img/logo.png" alt="logo" />
+    </div>
+    <div class="menutogler" id="menubtn">
+      <span class="material-icons-sharp">
+        menu
+        </span>
+    </div>
+  </div>
+</section>
+
+<script>
+            $(document).ready(function() {
+                $("#user_search").on("keyup", function() {
+                  console.log("Value Changed")
+                    var value = $(this).val().toLowerCase();
+                    $("#users tr").filter(function() {
+                        $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                    });
+                });
+
+                function getComboA(id){
+                    console.log(id);
+                }
+
+
+                $("select").on("change", function () {
+                  var id = $(this).attr("id");
+                  var fileStatus = this.value;
+                  $.ajax({
+                    url: "http://localhost:8080/users/updateFileStatus",
+                    type: "POST",
+                    data: {
+                      id: id,
+                      fileStatus: fileStatus,
+                    },
+                    dataType: "json",
+                    success: function (result) {
+                      console.log(result)
+                    },
+                  });
+        });
+
+            });
+        </script>
+
+<script src="/js/main.js"></script>
+    </body>
+   </html>

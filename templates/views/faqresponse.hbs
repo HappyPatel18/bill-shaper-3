@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+<link rel="manifest" href="./img/manifest.json">
+
+
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="./img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Billshaper</title>
+    <style>
+
+       @media only screen and (max-width: 768px) {
+
+        .label-message{
+          margin-left: 60px;
+        }
+       .alert{
+        width: 100%;
+        height: 100%;
+
+       }
+
+       .start-saving-button{
+          background-color:#413b8d;
+          margin-left:50px;
+          font-size:18px;
+          width:300px;
+          height:45px;
+          border-radius:25px;
+          text-align:center;
+          color:white;
+       }
+
+       .sign-up-button{
+          background-color: #413b8d;
+          margin-left: 120px;
+          color: white;
+       }
+
+
+       }
+
+       * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+.error {
+	color: #D8000C;
+	background-color: #FFBABA;
+}
+
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #04AA6D;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
+}
+.alert {
+  width:100%;
+  height: 100%;
+  --bs-alert-bg: transparent;
+  --bs-alert-padding-x: 1rem;
+  --bs-alert-padding-y: 1rem;
+  --bs-alert-margin-bottom: 1rem;
+  --bs-alert-color: inherit;
+  --bs-alert-border-color: transparent;
+  --bs-alert-border: 1px solid var(--bs-alert-border-color);
+  --bs-alert-border-radius: 0.375rem;
+  position: relative;
+  padding: var(--bs-alert-padding-y) var(--bs-alert-padding-x);
+  margin-bottom: var(--bs-alert-margin-bottom);
+  color: var(--bs-alert-color);
+  background-color: var(--bs-alert-bg);
+  border: var(--bs-alert-border);
+  border-radius: var(--bs-alert-border-radius);
+}
+.alert-danger {
+  --bs-alert-color: #842029;
+  --bs-alert-bg: #f8d7da;
+  --bs-alert-border-color: #f5c2c7;
+}
+.alert-question-color{
+  --bs-alert-bg: transparent;
+  --bs-alert-padding-x: 1rem;
+  --bs-alert-padding-y: 1rem;
+  --bs-alert-margin-bottom: 1rem;
+  --bs-alert-color: inherit;
+  --bs-alert-border-color: transparent;
+  --bs-alert-border: 1px solid var(--bs-alert-border-color);
+  --bs-alert-border-radius: 0.375rem;
+  position: relative;
+  padding: var(--bs-alert-padding-y) var(--bs-alert-padding-x);
+  margin-bottom: var(--bs-alert-margin-bottom);
+  color: var(--bs-alert-color);
+  background-color: #cdebef;
+  border: var(--bs-alert-border);
+  border-radius: var(--bs-alert-border-radius);
+}
+.alert-success {
+  --bs-alert-color: #0f5132;
+  --bs-alert-bg: #d1e7dd;
+  --bs-alert-border-color: #badbcc;
+}
+.alert-question{
+   --bs-alert-color: #cdebef;
+  --bs-alert-bg: #d1e7dd;
+  --bs-alert-border-color: #badbcc;
+}
+
+textarea::placeholder {
+    font: 13px/3 sans-serif;
+    color: black;
+}
+textarea {
+  width: 100%;
+  height: 200px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #badbcc;
+  font-size: 16px;
+  resize: none;
+
+}
+
+    </style>
+  </head>
+  <body>
+
+    <header id="home" class="header">
+      <nav class="navigation">
+        <div class="nav-center container">
+          <a href="/" class="logo">
+            <img src="./img/logo.png" alt="EV Birds" />
+          </a>
+
+          <div class="nav-menu">
+            <div class="nav-top">
+              <div class="logo">
+                <img src="img/logo.png" alt="learn" />
+              </div>
+              <div class="close">
+                <svg
+                  width="35"
+                  height="35"
+                  viewBox="0 0 35 35"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="text"
+                    d="M8.64724 11.285L23.4965 26.1342C23.7697 26.4074 24.2127 26.4079 24.4864 26.1342C24.7601 25.8605 24.7597 25.4175 24.4864 25.1443L9.63719 10.295C9.36396 10.0218 8.92096 10.0213 8.64724 10.295C8.37352 10.5687 8.37352 11.0113 8.64724 11.285Z"
+                    fill="#2c92df"
+                  />
+                  <path
+                    d="M9.63727 26.1151L24.4865 11.2659C24.7597 10.9926 24.7602 10.5496 24.4865 10.2759C24.2128 10.0022 23.7698 10.0027 23.4966 10.2759L8.64732 25.1251C8.37409 25.3984 8.3736 25.8414 8.64732 26.1151C8.92104 26.3888 9.36355 26.3888 9.63727 26.1151Z"
+                    fill="#2c92df"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="#" class="nav-link scroll-link">About Us</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link scroll-link">Features</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link scroll-link"
+                  >Pricing</a
+                >
+              </li>
+              <li class="onmobile">
+                 <a href="/login">Login</a>
+              </li>
+              <li class="onmobile">
+                <a class="btn btn-primary" href="/register">
+                Start Saving
+              </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="nav-icons">
+            <span>
+              <a href="/login">Login</a>
+            </span>
+            <span>
+              <a class="btn btn-primary" href="/register">
+                Start Saving
+              </a>
+            </span>
+          </div>
+
+          <div class="hamburger">
+            <svg
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.06694 10.5001H27.0669C27.4533 10.5001 27.7669 10.1872 27.7669 9.8001C27.7669 9.413 27.4533 9.1001 27.0669 9.1001H6.06694C5.68054 9.1001 5.36694 9.413 5.36694 9.8001C5.36694 10.1872 5.67984 10.5001 6.06694 10.5001Z"
+                fill="#2c92df"
+              />
+              <path
+                d="M6.06694 25.9H27.0669C27.4533 25.9 27.7669 25.5871 27.7669 25.2C27.7669 24.8129 27.4533 24.5 27.0669 24.5H6.06694C5.68054 24.5 5.36694 24.8129 5.36694 25.2C5.36694 25.5871 5.67984 25.9 6.06694 25.9Z"
+                fill="#2c92df"
+              />
+              <path
+                d="M6.06694 18.2H27.0669C27.4533 18.2 27.7669 17.8871 27.7669 17.5C27.7669 17.1129 27.4533 16.8 27.0669 16.8H6.06694C5.68054 16.8 5.36694 17.1129 5.36694 17.5C5.36694 17.8871 5.67984 18.2 6.06694 18.2Z"
+                fill="#2c92df"
+              />
+            </svg>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="hero">
+      {{!-- <div class="container">
+        <div class="col-two">
+          <div class="hero-text">
+            <h1 class="title">
+              Already got the <span class="text-primary"
+                >best price?</span
+              >
+            </h1>
+            <p class="subtitle">It dose not matter if you have already got a new promotion. already got the negotiation done, or recently got discounts. We can still get discounts for you on top of that.
+            </p>
+            
+          </div> --}}
+          <div class="hero-img">
+            <div class="container" style="width:1000px">
+       
+        <!-- <small
+          >*Estimates are based on Billshaper' past experience negotiating with
+          this provider. Estimated savings are not guaranteed. Some users may
+          not experience any savings.</small -->
+         
+     {{#if message_alert}}
+        <form style="width:800px" id="regForm" action="/uploadQuestion" class="calclutor" method="post">
+          
+            <div class="tab" >
+                <h3 class="alert-question-color alert-question">{{this.question}}</h3><br><br>
+                  <div class="alert alert-success">
+                      {{message_alert}}
+                  </div>
+             </div>
+        </form>   
+      {{/if}}
+
+    {{#if message}}
+        <form style="width:800px" id="regForm" action="/uploadQuestion" class="calclutor" method="post">
+             <div class="tab" >
+                   <h3 class="alert-question-color alert-question">{{this.question}}</h3><br><br>
+                  <input type="hidden" name="user_question" id="User_Question" value="{{this.question}}" />
+                  <input type="hidden" name="user_provider" id="" value="{{this.provider}}" />
+
+             </div>
+               {{!-- <a href="/register"  class="btn btn-primary start-saving-button">Start Saving Now</a> --}}
+               <button type="submit" class="btn start-saving-button">Start Saving Now</button>
+
+          {{!-- <button type="submit" class="btn start-saving-button">Start Saving Now</button> --}}
+
+        </form>        
+    {{/if}}
+
+    {{#if message1}}
+            
+        <form style="width:800px" id="regForm" action="/uploadQuestion" class="calclutor" method="post">
+             <div class="tab" >
+              <h3 class="alert-question-color alert-question" >{{this.question}}</h3><br><br>
+                <input type="hidden" name="user_provider" id="" value="{{this.provider}}" />    
+                <input type="hidden" name="user_question" id="User_Question" value="{{this.question}}" />
+              </div>
+                {{!-- <a href="/register"  class="btn btn-primary start-saving-button">Sign Up</a> --}}
+               <button type="submit" class="btn start-saving-button">Start Saving Now</button>
+
+                <br><p class="label-message">Please sign up to Submit your question</p>
+
+        </form>
+    {{/if}}
+    
+    {{#if message2}}
+          <form style="width:800px" id="regForm" action="/uploadQuestion" class="calclutor" method="post">
+              <div class="tab" >
+              <section class="container ">
+              <main class="mainContent">
+                 <div class="box">
+                    {{!-- <form action="/users/uploadQuestion" method="post" enctype="multipart/form-data"> --}}
+                        <textarea name="user_question" id="note" rows="10" cols="100" placeholder="Write your question"></textarea><br>
+                        <input type="hidden" name="user_provider" id="" value="{{this.provider}}" />
+                 </div>
+                 </main>
+                 </section>
+              </div>
+               {{!-- <a href="/register"  class="btn btn-primary start-saving-button">Sign Up</a> --}}
+               <button type="submit" class="btn start-saving-button">Start Saving Now</button>
+        
+                <br><p class="label-message">Please sign up to Submit your question</p>
+          </form>
+     {{/if}}
+      
+
+
+              {{#if message3}}
+                <div class="tab" >
+                      <h3 class="alert-question-color" >{{this.question}}</h3><br><br>
+                </div>
+                  <div class="alert alert-success">
+                Congratulations!! We can get your service cancellation done with no ETF(early termination fee) charges. We charge only 30% of your total savings. Please fill the form to proceed or <a href="#" style="color:black;"><b>click here to know more.</b></a>                  
+                  <br><br>
+            <form style="width:800px" id="regForm" action="/uploadQuestion" class="calclutor" method="post">
+
+            {{!-- <form class="form contact-form" action="/uploadQuestion" method="post" > --}}
+
+                <input type="hidden" name="user_question" id="" value="{{this.question}}" />
+                <input type="hidden" name="user_provider" id="" value="{{this.provider}}" />
+                  <div class="form-row">
+                    <label>Cancellation date? <span style="color:red;">*</span></label>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: black;background-color:var(--bs-alert-bg)" type="text" class="form-input" name="cancellation_date" id="date" required>
+                  </div>
+
+                  <div class="form-row">
+                    <label>Final Billing address, where you want your final bill or refund check to be sent? <span style="color:red;">*</span></label>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: black;background-color:var(--bs-alert-bg)" type="text" class="form-input" name="billing_address" id="address" required>
+                  </div>
+
+                  <div class="form-row">
+                    <label>Reason for cancellation ? <span style="color:red;">*</span></label>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: black;background-color:var(--bs-alert-bg)" type="text" class="form-input" name="cancellation_reason" id="reason" required>
+                  </div>
+
+                  <div class="form-row">
+                    <label >Best email address ? <span style="color:red;">*</span></label>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: black;background-color:var(--bs-alert-bg)" type="text" class="form-input" name="email_address" id="email" required>
+                  </div>
+                </div> 
+
+               </div> 
+
+               <button type="submit" class="btn start-saving-button">Start Saving Now</button>
+                {{!-- <a href="/register"  class="btn btn-primary start-saving-button">Start Saving Now</a> --}}
+        </form>
+
+
+              {{/if}}
+
+              {{#if message4}}
+              <div class="tab" >
+                      <h3 class="alert-question-color" >{{this.question}}</h3><br><br>
+                </div>
+
+              <div class="alert alert-success">
+                Congratulations!! We can get you discount or waiver on your final bill, as well as place a cancellation request at no extra fee.We charge only 30% of your total savings. Please fill the form to proceed or <a href="#" style="color:black"><b>click here to know more.</b></a>
+                  
+                  <br><br>
+
+            <form style="width:800px" id="regForm" action="/uploadQuestion" class="calclutor" method="post">
+                <input type="hidden" name="user_provider" id="" value="{{this.provider}}" />
+                  <input type="hidden" name="user_question" id="" value="{{this.question}}" />
+                  <div class="form-row">
+                    <label>Cancellation date? <span style="color:red;">*</span></label>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: black;background-color:var(--bs-alert-bg)" type="text" class="form-input" name="cancellation_date" id="" >
+                  </div>
+                  <div class="form-row">
+                    <label>Final Billing address, where you want your final bill or refund check to be sent? <span style="color:red;">*</span></label>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: black;background-color:var(--bs-alert-bg)" type="text" class="form-input" name="address" id="" >
+                  </div>
+                  <div class="form-row">
+                    <label>Reason for cancellation ? <span style="color:red;">*</span></label>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: black;background-color:var(--bs-alert-bg)" type="text" class="form-input" name="cancellation_reason" id="" >
+                  </div>
+                  <div class="form-row">
+                    <label>Best email address ? <span style="color:red;">*</span></label>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: black;background-color:var(--bs-alert-bg)" type="text" class="form-input" name="email_address" id="" >
+                  </div>
+                </div> 
+               <button type="submit" class="btn start-saving-button">Start Saving Now</button>
+
+                {{!-- <a href="/register"  class="btn btn-primary start-saving-button">Start Saving Now</a> --}}
+        </form>
+              {{/if}}
+
+              {{#if message5}}
+              <div class="tab" >
+                      <h3 class="alert-question-color" >{{this.question}}</h3><br><br>
+                </div>
+
+              <div class="alert alert-success">
+                  Congratulations!! We can help you to waive off 'Unreturned/ Inactive Equipment charges. We charge only 30% of your total savings. Please fill the form to proceed or <a href="" style="color:black;"><b>click here to know more.</b></a>
+                  
+                  <br><br>
+            <form style="width:800px" id="regForm" action="/uploadQuestion" class="calclutor" method="post">
+
+
+                  <input type="hidden" name="user_question" id="" value="{{this.question}}" />
+                  <input type="hidden" name="user_provider" id="" value="{{this.provider}}" />
+                  <div class="form-row">
+                    <label>Equipment type ? (Modem/Cable box) <span style="color:red;">*</span></label>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: black;background-color:var(--bs-alert-bg)" type="text" class="form-input" name="type_equipment" id="note" >
+                  </div>
+                  <div class="form-row">
+                    <label>How much you are paying monthly for this Unreturned/Inactive equipment ? <span style="color:red;">*</span></label>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: black;background-color:var(--bs-alert-bg)" type="text" class="form-input" name="monthly_payment" id="note" >
+                  </div>
+                  <div class="form-row">
+                    <label>Reason for Unreturned equipment ?</label>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: black;background-color:var(--bs-alert-bg)" type="text" class="form-input" name="unreturned_reason" id="note" >
+                  </div>
+                  
+                </div> 
+                 <button type="submit" class="btn start-saving-button">Start Saving Now</button>
+
+                {{!-- <a href="/register" class="btn btn-primary start-saving-button">Start Saving Now</a> --}}
+        </form>
+              {{/if}}
+            </div><br>
+      </div>
+            {{!-- <img src="./img/hero-img.png" alt="hero" /> --}}
+
+          </div>
+        </div>
+      </div>
+    </section>
+  
+        <section class="whyus">
+      <div class="container">
+          <div class="col-two">
+            <div><h2 class="title">Why Use <span class="text-primary"> Billshaper</span></h2>
+            <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto magni aperiam facere vel excepturi delectus provident beatae quae hic eum temporibus, mollitia maxime animi voluptatibus aliquam sequi incidunt assumenda reiciendis.</p></div>
+                 <div>
+            <div class="card">
+              <img src="./img/card1.png" alt="">
+              <h3>No More Headaches</h3>
+              <p>Never wait on hold again. Save time, hassle, and stress when we negotiate on your behalf. </p>
+            </div>
+            <div class="card">
+              <img src="./img/card2.png" alt="">
+              <h3>Save Serious Money</h3>
+              <p>95% of people are overpaying. Save $300 a year on average on tv, internet, and phone bills.</p>
+            </div>
+            <div class="card">
+              <img src="./img/card3.png" alt="">
+              <h3>No Risk Guarantee</h3>
+              <p>We split the savings with you. Can't save you money? It's free. No hidden fees or upfront cost.</p>
+            </div>
+          </div>
+          </div>
+      </div>
+    </section>
+    <section class="steps">
+      <div class="container">
+        <h2 class="title center">Start <span class="text-primary" >saving money</span> in two minutes.</h2>
+        <p class="center subtitle">Create an account, tell us about your bills, and start saving. That's it.</p>
+        <div class="col-three">
+          <div class="card center">
+            <h3>You Give Us Bills</h3>
+            <p>It's easy. Link your bank or select your providers. Then, get us a copy of the bill or answer a few questions and you're done!</p>
+          </div>
+          <div class="card center">
+            <h3>We Negotiate</h3>
+            <p>We battle your provider to lower your bills for the same services. No waiting on hold. No trade-offs. Just savings.</p>
+          </div>
+          <div class="card center">
+            <h3>You Save Money</h3>
+            <p>Your bills drop and you save money. We split the savings for the first year. Then, we monitor your bills while you relax.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <footer class="pop">
+      <div class="container">
+        <div class="col-fore">
+          <div class="info logo">
+            <img src="./img/logo.png" alt="">
+            <p>We want to help save you money. Behind the shiny website, we're real people who think the way big corporations treat customers is unfair.</p>
+            <p>If you ever need anything, email</p>
+            <a href="mailto:hello@billshaper.com">hello@billshaper.com</a>
+          </div>
+          <div class="links"> <h3>About</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul></div>
+          <div class="links"> <h3>About</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul></div>
+          <div class="links"> <h3>About</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul></div>
+        </div>
+      </div>
+              <div class="col-two footerbottom container">
+          <div>
+           <h5><span id="year"></span> © Billshaper, LLC </h5>
+          </div>
+          <div><ul class="follow aos-init aos-animate" data-aos="fade-in" data-aos-offset="0" data-aos-delay="800">
+                  <li>
+                    <a href="#">
+                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24.2188 12.1094C24.2188 5.41992 18.7988 0 12.1094 0C5.41992 0 0 5.41992 0 12.1094C0 18.1533 4.42822 23.1631 10.2173 24.0723V15.6099H7.14111V12.1094H10.2173V9.44141C10.2173 6.40674 12.0239 4.73047 14.791 4.73047C16.1162 4.73047 17.502 4.9668 17.502 4.9668V7.94531H15.9746C14.4707 7.94531 14.0015 8.87891 14.0015 9.83643V12.1094H17.3599L16.8228 15.6099H14.0015V24.0723C19.7905 23.1631 24.2188 18.1533 24.2188 12.1094Z" fill="#DDDDDD"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.11 0C5.42175 0 0 5.42175 0 12.11C0 18.7983 5.42175 24.22 12.11 24.22C18.7983 24.22 24.22 18.7983 24.22 12.11C24.22 5.42175 18.7983 0 12.11 0ZM9.14557 17.1293H6.6933V9.23766H9.14557V17.1293ZM7.9043 8.26886C7.12976 8.26886 6.62896 7.72012 6.62896 7.04146C6.62896 6.34892 7.1449 5.81658 7.93583 5.81658C8.72677 5.81658 9.21117 6.34892 9.22631 7.04146C9.22631 7.72012 8.72677 8.26886 7.9043 8.26886ZM18.1019 17.1293H15.6497V12.7559C15.6497 11.7379 15.2939 11.0466 14.4071 11.0466C13.7297 11.0466 13.3273 11.5146 13.1494 11.9649C13.0838 12.1251 13.0674 12.3522 13.0674 12.578V17.1281H10.6139V11.7543C10.6139 10.7691 10.5824 9.94534 10.5496 9.2364H12.6802L12.7924 10.3326H12.8416C13.1646 9.81793 13.9555 9.05853 15.2788 9.05853C16.8922 9.05853 18.1019 10.1396 18.1019 12.4632V17.1293V17.1293Z" fill="#DDDDDD"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.1321 11.8993L11.2989 10.5773C11.0516 10.4625 10.8485 10.5912 10.8485 10.8649V13.3551C10.8485 13.6288 11.0516 13.7575 11.2989 13.6427L14.1309 12.3207C14.3794 12.2046 14.3794 12.0154 14.1321 11.8993ZM12.11 0C5.42175 0 0 5.42175 0 12.11C0 18.7983 5.42175 24.22 12.11 24.22C18.7983 24.22 24.22 18.7983 24.22 12.11C24.22 5.42175 18.7983 0 12.11 0ZM12.11 17.0297C5.91119 17.0297 5.80271 16.4709 5.80271 12.11C5.80271 7.74914 5.91119 7.19031 12.11 7.19031C18.3088 7.19031 18.4173 7.74914 18.4173 12.11C18.4173 16.4709 18.3088 17.0297 12.11 17.0297Z" fill="#DDDDDD"></path>
+                      </svg>
+                    </a>
+                  </li>
+                </ul></div>
+          </div>
+    </footer>
+    <script src="./js/main.js"></script>
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+<script>
+var flag = 0;    
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= 2) {
+    // ... the form gets submitted:
+      document.getElementById("regForm").submit();
+      return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+
+  if(flag==1){
+    var select = document.getElementById('provider');
+    var value = select.options[select.selectedIndex].value;
+    if(value.length!=0){
+        return valid;
+    }else{
+        alert('Please select provider')
+    }
+
+  }
+  else{
+      var ele = document.getElementsByName('question');
+        for(i = 0; i < ele.length; i++) {
+                if(ele[i].checked){
+                    flag=1;
+                    return valid;
+                }
+            }
+                    alert('Please choose any one option')
+                    return false;
+  }
+              
+            
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+</script>
+<script>
+
+
+
+
+var timer = null;
+function addDollar(data)  {
+   var regEx = /^[$]{1}/; 
+
+    if(regEx.test(data)){
+
+    }else{
+      document.getElementById("est").value= "$"+data
+    }
+    
+
+
+  }
+  
+var timer = null;
+
+function calSavings(){
+    clearTimeout(timer); 
+    timer = setTimeout(doStuff, 1000)
+      
+
+}  
+
+function doStuff() {
+  var data = document.getElementById("est").value
+  var provider = document.getElementById("provider").value; 
+  if(provider.length==0){
+      document.getElementById("provider").style.border = "2px solid red";
+      document.getElementById("est_div").style.display= "none";
+
+  }else{
+      document.getElementById("provider").style.border = "";
+
+      if(data.length!=0){
+      amount = data.substring(1);
+      var input = parseInt(amount);
+      if(provider=='Xfinity'){
+                var result =  Math.round((23 / 10) * input);
+                
+
+      }else{
+                var result =  Math.round((17 / 10) * input );
+
+      }
+      document.getElementById("est_savings").innerHTML = "$ " + result +" / year "
+      document.getElementById("est_div").style.display= "block";
+  }else{
+          document.getElementById("est_div").style.display= "none";
+
+  }
+
+
+  }
+
+  
+      
+}
+
+function check() {
+
+         let result = document.getElementById("est").value;
+         alert(result.length);
+          if(result.length==1){
+                  document.getElementById("est").value= "";
+          }
+        
+}
+
+  ScrollReveal().reveal('.hero-img img',{
+    delay: 700,
+    origin: 'bottom',
+    duration: 900,
+    
+  });
+  ScrollReveal().reveal('.title', {
+    delay: 500,
+    duration: 300,
+    easing: 'ease-in-out',
+        origin: 'bottom',
+    distance: '50px',
+    
+});
+ScrollReveal().reveal('.subtitle', {
+    delay: 700,
+    duration: 500,
+    easing: 'ease-in',
+        origin: 'bottom',
+        
+});
+ScrollReveal().reveal('.btnAnimate', {
+    delay: 900,
+    duration: 500,
+    easing: 'ease-in',
+});
+ScrollReveal().reveal('.calclutor', {
+    delay: 700,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in',
+        origin: 'bottom',
+        
+});
+ScrollReveal().reveal('.header', {
+    delay: 0,
+    duration: 300,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'top',
+    distance: '100px',
+    
+});
+ScrollReveal().reveal('.pop', {
+    delay: 600,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'bottom',
+    distance: '100px',
+    
+});
+ScrollReveal().reveal('.card', {
+    delay: 600,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'bottom',
+    distance: '100px',
+    
+});
+ScrollReveal().reveal('.footer', {
+    delay: 800,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'bottom',
+    distance: '100px',
+    
+});
+
+</script>
+  </body>
+</html>

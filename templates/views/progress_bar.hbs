@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+<link rel="manifest" href="./img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="./img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Billshaper</title>
+  </head>
+  <body>
+    <section class="container ">
+  <aside>
+    <div class="sidebar-top">
+      <div class="logo">
+        <img src="../img/logo.png" alt="logo" />
+      </div>
+      <div class="close" id="close">
+        <span class="material-icons-sharp">
+          close
+          </span>
+      </div>
+    </div>
+    <div id="sidebar" class="sidebar">
+      <a href="/users/getMultipleFiles" class="active">
+        <span class="material-icons-sharp">
+          grid_view
+          </span>
+          <h3>Dashboard</h3>
+      </a>
+      <a href="/users/upload" class="">
+        <span class="material-icons-sharp">
+          receipt
+            </span>
+          <h3>Lower a new bill</h3>
+      </a>
+      <a href="/users/getMultipleFiles">
+        <span class="material-icons-sharp">
+          receipt_long
+          </span>
+          <h3>Manage payments and notification</h3>
+      </a>
+
+      <div class="sidebarBottom">
+        <a href="#">
+          <span class="material-icons-sharp">
+            help_outline
+            </span>
+            <h3>Help</h3>
+        </a>
+        <a href="#">
+          <span class="material-icons-sharp">
+            contact_support
+            </span>
+            <h3>Get Help</h3>
+        </a>
+        <a href="#">
+          <span class="material-icons-sharp">
+            list_alt
+            </span>
+            <h3>Read Teams</h3>
+        </a>
+        <a href="/logout">
+          <span class="material-icons-sharp">
+            logout
+            </span>
+            <h3>Sign Out</h3>
+        </a>
+      </div>
+    </div>
+  </aside>
+    <main class="mainContent">
+            <div class="box" style="margin-top:200px;border-radius:15px">
+                {{#if message}}
+                  <div class="alert alert-success">
+                      {{message}}
+                  </div>
+              {{/if}}
+             <div><label style="font-size:30px;display:inline-block;margin-right:100px;font-family:sans-serif;font-weight:normal" for="file">Negotiating Soon </label><a style="display:inline-block;" href="/users/getMultipleFiles">View Bills</a></div>
+                <br>
+
+                <div class="w3-light-grey w3-round-xlarge">
+                  <div class="w3-container w3-black w3-round-xlarge" style="height:10px;width:25%;"></div>
+                </div>
+            
+            </div>
+    </main>
+
+    </section>
+  </body>
+</html>

@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+<link rel="manifest" href="./img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="./img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Billshaper</title>
+  </head>
+  <body>
+    <header id="home" class="header">
+      <nav class="navigation">
+        <div class="nav-center container">
+          <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="EV Birds" />
+          </a>
+<div class="navlist">
+          <div class="nav-menu">
+            <div class="nav-top">
+              <div class="logo">
+                <img src="img/logo.png" alt="learn" />
+              </div>
+              <div class="close">
+                <svg
+                  width="35"
+                  height="35"
+                  viewBox="0 0 35 35"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="text"
+                    d="M8.64724 11.285L23.4965 26.1342C23.7697 26.4074 24.2127 26.4079 24.4864 26.1342C24.7601 25.8605 24.7597 25.4175 24.4864 25.1443L9.63719 10.295C9.36396 10.0218 8.92096 10.0213 8.64724 10.295C8.37352 10.5687 8.37352 11.0113 8.64724 11.285Z"
+                    fill="#2c92df"
+                  />
+                  <path
+                    d="M9.63727 26.1151L24.4865 11.2659C24.7597 10.9926 24.7602 10.5496 24.4865 10.2759C24.2128 10.0022 23.7698 10.0027 23.4966 10.2759L8.64732 25.1251C8.37409 25.3984 8.3736 25.8414 8.64732 26.1151C8.92104 26.3888 9.36355 26.3888 9.63727 26.1151Z"
+                    fill="#2c92df"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="about.html" class="nav-link scroll-link">About Us</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="service.html" class="nav-link scroll-link">Features</a>
+              </li>
+              <li class="nav-item">
+                <a href="tesrimonial.html" class="nav-link scroll-link"
+                  >Pricing</a
+                >
+              </li>
+              <li class="onmobile">
+                 <a class="btn btn-secendary" href="/login">Login</a>
+              </li>
+              <li class="onmobile">
+                <a class="btn btn-primary" href="/register">
+                Start Saving
+              </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="nav-icons">
+            <span>
+              <a class="btn btn-secendary" href="/login">Login</a>
+            </span>
+            <span>
+              <a class="btn btn-primary" href="/register">
+                Start Saving
+              </a>
+            </span>
+          </div>
+        </div>
+
+          <div class="hamburger">
+            <svg
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.06694 10.5001H27.0669C27.4533 10.5001 27.7669 10.1872 27.7669 9.8001C27.7669 9.413 27.4533 9.1001 27.0669 9.1001H6.06694C5.68054 9.1001 5.36694 9.413 5.36694 9.8001C5.36694 10.1872 5.67984 10.5001 6.06694 10.5001Z"
+                fill="#2c92df"
+              />
+              <path
+                d="M6.06694 25.9H27.0669C27.4533 25.9 27.7669 25.5871 27.7669 25.2C27.7669 24.8129 27.4533 24.5 27.0669 24.5H6.06694C5.68054 24.5 5.36694 24.8129 5.36694 25.2C5.36694 25.5871 5.67984 25.9 6.06694 25.9Z"
+                fill="#2c92df"
+              />
+              <path
+                d="M6.06694 18.2H27.0669C27.4533 18.2 27.7669 17.8871 27.7669 17.5C27.7669 17.1129 27.4533 16.8 27.0669 16.8H6.06694C5.68054 16.8 5.36694 17.1129 5.36694 17.5C5.36694 17.8871 5.67984 18.2 6.06694 18.2Z"
+                fill="#2c92df"
+              />
+            </svg>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="hero">
+      <img  class="hero-img" src="./img/hero-img.png" alt="hero" />
+      <div class="container">
+        <div class="col-two">
+          <div class="hero-text">
+            <div class="beforetitle"><span>95% success rate</span><span>Instant savings</span></div>
+            <h1 class="title">Struggling to pay your <span class="text-primary"
+                >current due bill?</span
+              >
+            </h1>
+            <p class="subtitle">See how much you could save with us! We guarantee  
+              savings else, we will not charge any fee.</p>
+          </div>
+          <div class="savingform">
+            <h2 class="title center">
+              <span class="text-primary">Saving</span> calculator
+            </h2>
+            <p class="subtitle center">See how much you could save with us! We guarantee savings else, we will not charge any fee.
+            </p>
+            <form class="calclutor calclutorr" action="" method="post">
+              <h3>Who's your service provider?</h3>
+              <select onchange="calSavings()" name="provider" id="provider" class="provider">
+                <option style="color:black" value="">Select a provider</option>
+        {{#each records}}
+                    <option style="color:black" value="{{this.name}}">{{this.name}}</option>
+        {{/each}}
+              </select>
+              <h3>What's your current monthly payment?</h3>
+              <input onkeydown="calSavings()" type="text" id="est" value="" onkeypress="addDollar(this.value)" placeholder="$0.00" />
+              <div id="est_div" style="display:none;text-align:center;margin-bottom:10px;justify-content:center;">
+                <p>Estimated savings</p>
+                <div style="border-radius:15px;background:#e3f7f4;">
+                <p  id="est_savings" style="padding: 10px;"></p>
+                </div>
+              </div>
+            
+              <a class="btn btn-primary btnAnimate" href="/register">
+                Start Saving Now
+              </a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+        <section class="whyus">
+      <div class="container">
+          <div class="col-three">
+            <div class="card">
+              <div class="card-img">
+                <img src="./img/instant-saving.png" alt="">
+              </div>
+              <div class="text">
+              <h3>Instant savings.</h3>
+              <p>We do not touch your services. We simply negotiate your current due bill and get it reduced by up to 100%.</p>
+            </div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="./img/signup.png" alt="">
+              </div>
+              <div class="text">
+              <h3>Sign up for free and enjoy savings.</h3>
+              <p>We will negotiate your bill thrice a year to increase your yearly savings. Save up to $400 a year on an average.</p>
+            </div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="./img/no-risk.png" alt="">
+              </div>
+              <div class="text">
+                <h3>No Risk Guarantee</h3>
+              <p>Pay after the confirmation of your savings. If you save nothing, you pay nothing, no hidden charges or upfront cost.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+    <section class="faq">
+      <div class="container">
+        <div class="col-two">
+          <div>
+            <div class="card">
+              <h3>Free Expert Assistance</h3>
+              <p>Have any questions related to your cable, Internet and Phone services ? We're here to assist you.</p>
+            </div>
+          </div>
+          <div class="faqlist">
+            <img src="img/Titik-titik.png" alt="">
+            <h2 class="title">Ask the expert</h2>
+            <p class="subtitle">Select any of the <strong>Frequently Asked Questions</strong> or choose the last option to <strong>Write Your Own</strong> question and then click <strong>‘Continue’</strong> button.</p>
+            {{!-- <form id="regForm" action="/submitFAQ"  method="post" method="post"> --}}
+              <div class="listbg">
+                <div class="listiteam">
+                  <label for="q1"><input class="radio" value="question1" type="radio" name="question" id="q1">
+                    <span class="checkmark"></span>
+                    <span class="text">How can I get discount or a waiver on my current monthly bill ?</span></label></div>
+              <div class="listiteam">
+                <label for="q2"><input class="radio" value="question2" type="radio" name="question" id="q2">
+                  <span class="checkmark"></span>
+                  <span class="text">How to avoid an Early Termination Fee (ETF) while canceling a service with agreement?</span></label></div>
+              <div class="listiteam">
+                <label for="q3"><input class="radio" value="question3" type="radio" name="question" id="q3">
+                  <span class="checkmark"></span>
+                  <span class="text">How can I get a discount or waiver on final bill while placing a cancellation request ?</span></label></div>
+              <div class="listiteam">
+                <label for="q4"><input class="radio"  value="question4"  type="radio" name="question" id="q4">
+                  <span class="checkmark"></span>
+                  <span class="text">How to avoid charges for unreturned equipment/lost equipment/damaged equipment ?</span></label></div>
+              <div class="listiteam">
+                <label for="q5"><input class="radio" value="question5"  type="radio" name="question" id="q5">
+                  <span class="checkmark"></span>
+                  <span class="text">I am struggling to pay my current monthly bill, how can i get discount to reduce it?</span></label></div>
+              <div class="listiteam">
+                <label for="q6"><input class="radio" value="question6"  type="radio" name="question" id="q6">
+                  <span class="checkmark"></span>
+                  <span class="text">How can I get a new customer promotion with my existing services ?</span></label></div>
+              <div class="listiteam">
+                <label for="q7"><input class="radio" value="question7" type="radio" name="question" id="q7">
+                  <span class="checkmark"></span>
+             <span class="text">I will write my question.</span></label></div>
+            </div>
+            <div id="myModal" class="modal">
+              <div class="modal-content calclutor">
+                <span class="closemodel" id="closemodel">&times;</span>
+                {{!-- <form id="qform" class="calclutor" action="" method="post"> --}}
+                  <h3>Who's your service provider?</h3>
+                  {{!-- <select   onchange="calSavings()" name="serviceProvider" id="provider"> --}}
+                {{!-- <option style="color:black" value="">Select a provider</option>
+                {{#each records}}
+                            <option style="color:black" value="{{this.name}}">{{this.name}}</option>
+                {{/each}}
+                </select> --}}
+                  <select onchange="" class="provider" name="serviceProvider" id="modelprovider">
+                   <option style="color:black" value="">Select a provider</option>
+                {{#each records}}
+                            <option style="color:black" value="{{this.name}}">{{this.name}}</option>
+                {{/each}}
+                  </select>
+
+                  <div class="ifothers" id="ifothers">
+
+                    <div id="forouthers" class="msgbox">
+                      <p class="msg" id="msg">“Unfortunately, free assistance service is available only for companies who are listed in dropdown. Please select any other service provider or try again later, as we are trying to get assistance service for more companies”.</p>
+                    </div>
+
+                   <form  id="" action="/uploadQuestion" class="" method="post"> 
+
+                      <div id="visibleforq1">
+                        
+                        <p class="msg">Congratulations!! We can battle your service provider and get you savings upto 100% on your current monthl bill.
+                          Guaranteed savings else, our service is free(we charge only 30% of total saving which we get for you).</p>
+                          
+                          <input type="hidden" name="user_question" id="" value="How can I get discount or a waiver on my current monthly bill ?" />
+                          <input type="hidden" name="user_provider" id="" value="Comcast Xfinity" />
+
+                          <input id="modelbtn" class="btn btn-primary" type="submit" value="Start Saving Now"/>
+                      
+                      </div>
+
+                    </form>
+
+                <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="visibleforq2"  class="msgbox">
+                        <p class="msg gap">Congratulations!! We can get your service cancellation done with no ETF(early termination fee) charges. We charge only 30% of your total savings. Please fill the form to proceed or <strong><a href="#">click here to know more.</a></strong></p>
+                        <div class="modelform">
+                          <label for="canceldate">Cancellation date?</label>
+                          <input type="text" name="cancellation_date" id="canceldate" placeholder="dd/mm/yyyy">
+
+                          <label for="billingaddress">Final Billing address, where you want your finall bill or refund check to be sent?</label>
+                          <input type="text" name="billing_address" id="billingaddress" placeholder="Enter Billing address">
+
+                          <label for="resone">Reason for cancellation ?</label>
+                          <input type="text" name="cancellation_reason" id="resone" placeholder="Type Reason">
+
+                          <label for="email">Best email address ?</label>
+                          <input type="email" name="email_address" id="email" placeholder="name@gmail.com">
+
+                          <input type="hidden" name="user_question" id="" value="How to avoid an Early Termination Fee (ETF) while canceling a service with agreement?" />
+                          <input type="hidden" name="user_provider" id="" value="Comcast Xfinity" />
+
+                          <input id="modelbtn" class="btn btn-primary" type="submit" value="Start Saving Now"/>
+                        </div>
+                      </div>
+                 </form>
+
+                  <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="visibleforq3"  class="msgbox">
+                        <p class="msg gap">Congratulations!! We can get you discount or waiver on your final bill, as well as place a cancellation request at no extra fee.We charge only 30% of your total savings. Please fill the form to proceed or  <strong><a href="#">click here to know more.</a></strong></p>
+                        <div class="modelform">
+                          <label for="canceldate">Cancellation date?</label>
+                          <input type="text" name="cancellation_date" id="canceldate" placeholder="dd/mm/yyyy">
+
+                          <label for="billingaddress">Final Billing address, where you want your finall bill or refund check to be sent?</label>
+                          <input type="text" name="billing_address" id="billingaddress" placeholder="Enter Billing address">
+
+                          <label for="resone">Reason for cancellation ?</label>
+                          <input type="text" name="cancellation_reason" id="resone" placeholder="Type Reason">
+
+                          <label for="email">Best email address ?</label>
+                          <input type="email" name="email_address" id="email" placeholder="name@gmail.com">
+
+                          <input type="hidden" name="user_question" id="" value="How can I get a discount or waiver on final bill while placing a cancellation request ?" />
+                          <input type="hidden" name="user_provider" id="" value="Comcast Xfinity" />
+
+                          <input id="modelbtn" class="btn btn-primary" type="submit" value="Start Saving Now"/>
+                        </div>
+                      </div>
+                      </form>
+
+                      <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="visibleforq4"  class="msgbox">
+                        <p class="msg gap">Congratulations!! We can help you to waive off ‘Unreturned/Inactive Equipment charges. We charge only 30% of your total savings. Please fill the form to proceed or <strong><a href="#">click here to know more.</a></strong></p>
+                        <div class="modelform">
+                          <label for="equipment">Equipment type? (Modem/Cable box)</label>
+                          <input type="text" name="type_equipment" id="equipment" placeholder="Modem">
+
+                          <label for="monthlypayment">How much you are paying monthly for this Unreturned/Inactive equipment ?</label>
+                          <input type="text" name="monthly_payment" id="monthlypayment" placeholder="$50">
+
+                          <label for="resoneunre">Reason for unreturned equipment ?</label>
+                          <input type="text" name="unreturned_reason" id="resoneunre" placeholder="Type Reason">
+
+                          <input type="hidden" name="user_question" id="" value="How to avoid charges for unreturned equipment/lost equipment/damaged equipment ?" />
+                          <input type="hidden" name="user_provider" id="" value="Comcast Xfinity" />
+
+                        
+                          <input id="modelbtn" class="btn btn-primary" type="submit" value="Start Saving Now"/>
+                        </div>
+                      </div>
+                      </form>
+
+                      <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="visibleforq5">
+                        <p class="msg gap">Congratulations!! We can battle your service provider and get you savings upto 100% on your current monthl bill.
+                          Guaranteed savings else, our service is free(we charge only 30% of total saving which we get for you).</p>
+
+                          <input type="hidden" name="user_question" id="" value="I am struggling to pay my current monthly bill, how can I get a discount to reduce it?" />
+                          <input type="hidden" name="user_provider" id="" value="Comcast Xfinity" />
+
+                          <input id="modelbtn" class="btn btn-primary" type="submit" value="Start Saving Now"/>
+                      </div>
+                      </form>
+
+                      <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="visibleforq6" class="modelform">
+                        <div class="wraper">
+                        <label for="newcustomer">How can I get a new customer promotion with my existing services ?</label>
+                        <textarea class="msg" id="newcustomer"></textarea>
+                        </div>
+                        <input id="modelbtn" class="btn btn-primary" type="submit" value="SIGN UP"/>
+
+                        <input type="hidden" name="user_question" id="" value="How can I get a new customer promotion with my existing services ?" />
+                        <input type="hidden" name="user_provider" id="" value="Comcast Xfinity" />
+
+                        <p class="instruction">Please sign up to Submit your question.</p>
+                      </div>
+                      </form>
+
+                      <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="visibleforq7" class="modelform">
+                        <div class="wraper">
+                        <label for="newcustomer">Write your question</label>
+                        <textarea class="msg" id="newcustomer" placeholder="Write your question here"></textarea>
+                        </div>
+
+                        <input type="hidden" name="user_question" id="" value="I will write my own question" />
+                        <input type="hidden" name="user_provider" id="" value="Comcast Xfinity" />
+
+                        <input id="modelbtn" class="btn btn-primary" type="submit" value="SIGN UP"/>
+                        <p class="instruction">Please sign up to Submit your question.</p>
+                      </div>
+                    </form>
+
+
+                    <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="forotherprovider1">
+                        <p class="msg">Congratulations!! We can battle your service provider and get you savings upto 100% on your current monthl bill.
+                          Guaranteed savings else, our service is free(we charge only 30% of total saving which we get for you).</p>
+
+                        <input type="hidden" name="user_question" id="User_Question1" value="How can I get discount or a waiver on my current monthly bill?" />
+                        <input type="hidden" name="user_provider" id="User_Provider1" value="" /> 
+
+                          <input id="modelbtn" class="btn btn-primary" type="submit" value="Start Saving Now"/>
+                      </div>
+                      </form>
+
+                      <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="forotherprovider2" class="modelform">
+                        <div class="wraper">
+                        <label for="etf">How to avoid an Early Termination Fee (ETF) while canceling a service with agreement?</label>
+                        {{!-- <textarea class="msg" id="etf" placeholder="Write here"></textarea> --}}
+                        </div>
+                       
+                        <input type="hidden" name="user_question" id="User_Question2" value="How to avoid an Early Termination Fee (ETF) while canceling a service with agreement?" />
+                        <input type="hidden" name="user_provider" id="User_Provider2" value="" />
+                        
+                        <input id="modelbtn" class="btn btn-primary" type="submit" value="SIGN UP"/>
+                        <p class="instruction">Please sign up to Submit your question.</p>
+                      </div>
+                      </form>
+
+                      <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="forotherprovider3" class="modelform">
+                        <div class="wraper">
+                        <label for="discount">How can I get a discount or waiver on final bill while placing a cancellation request ?</label>
+                        {{!-- <textarea class="msg" id="discount" placeholder="Write here"></textarea> --}}
+                        </div>
+                        
+                        <input type="hidden" name="user_question" id="User_Question3" value="How can I get a discount or waiver on final bill while placing a cancellation request ?" />
+                        <input type="hidden" name="user_provider" id="User_Provider3" value="" />
+                        
+                        <input id="modelbtn" class="btn btn-primary" type="submit" value="SIGN UP"/>
+                        <p class="instruction">Please sign up to Submit your question.</p>
+                      </div>
+                      </form>
+
+                      <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="forotherprovider4" class="modelform">
+                        <div class="wraper">
+                        <label for="charges">How to avoid charges for unreturned equipment/lost equipment/damaged equipment ?</label>
+                        {{!-- <textarea class="msg" id="charges" placeholder="Write here"></textarea> --}}
+                        </div>
+                        
+                        <input type="hidden" name="user_question" id="User_Question4" value="How to avoid charges for unreturned equipment/lost equipment/ damaged equipment ?" />
+                        <input type="hidden" name="user_provider" id="User_Provider4" value="" />
+                        
+                        <input id="modelbtn" class="btn btn-primary" type="submit" value="SIGN UP"/>
+                        <p class="instruction">Please sign up to Submit your question.</p>
+                      </div>
+                      </form>
+
+                      <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="forotherprovider5">
+                        <p class="msg gap">Congratulations!! We can battle your service provider and get you savings upto 100% on your current monthl bill.
+                          Guaranteed savings else, our service is free(we charge only 30% of total saving which we get for you).</p>
+                        
+                        <input type="hidden" name="user_question" id="User_Question5" value="I am struggling to pay my current monthly bill, how can I get a discount to reduce it?" />
+                        <input type="hidden" name="user_provider" id="User_Provider5" value="" />
+                          
+                          <input id="modelbtn" class="btn btn-primary" type="submit" value="SIGN UP"/>
+                          <p class="instruction">Please sign up to Submit your question.</p>
+                      </div>
+                      </form>
+
+                      <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="forotherprovider6" class="modelform">
+                        <div class="wraper">
+                        <label for="promotion">How can I get a new customer promotion with my existing services ?</label>
+                        {{!-- <textarea class="msg" id="promotion" placeholder="Write here"></textarea> --}}
+                        </div>
+                       
+                       <input type="hidden" name="user_question" id="User_Question6" value="How can I get a new customer promotion with my existing services ?" />
+                       <input type="hidden" name="user_provider" id="User_Provider6" value="" />
+                       
+                        <input id="modelbtn" class="btn btn-primary" type="submit" value="SIGN UP"/>
+                        <p class="instruction">Please sign up to Submit your question.</p>
+                      </div>
+                      </form>
+
+                      <form  id="" action="/uploadQuestion" class="" method="post">
+                      <div id="forotherprovider7" class="modelform">
+                        <div class="wraper">
+                        <label for="promotion">Write your question</label>
+                        <textarea class="msg" id="promotion" placeholder="Write here"></textarea>
+                        </div>
+
+                        <input type="hidden" name="user_question" id="User_Question7" value="I will write my own questions" />
+                        <input type="hidden" name="user_provider" id="User_Provider7" value="" />
+
+                        <input id="modelbtn" class="btn btn-primary" type="submit" value="SIGN UP"/>
+                        <p class="instruction">Please sign up to Submit your question.</p>
+                      </div>
+                      </form>
+
+                  </div>
+                {{!-- </form> --}}
+              </div>
+            
+            </div>
+            <input disabled id="modeltriger" class="btn btn-secendary" type="submit" value="Continue">
+            {{!-- </form> --}}
+          </div>
+        </div>
+      </div>
+      <img class="sectionbg" src="img/faq-bg.png" alt="">
+    </section>
+    <section class="fact">
+      <div class="container">
+        <div class="col-two">
+          <div>
+            <ul>
+              <li>Already have the best promotion?</li>
+              <li>Recently got your bill lowered?</li>
+              <li>Do you have a promotion with an agreement?</li>
+              <li>Have you recently got a new service with the best promotion?</li>
+            </ul>
+            <p class="subtitle">
+              We can still help you to get discounts on your current due bill, without any service change or promotion change. 
+            </p>
+          </div>
+          <div class="imgbox">
+            <img src="img/Titik-titik.png" alt="">
+            <div class="card">
+              <div class="col">
+                <h4><ins>Guaranteed savings.</ins></h4>
+                <img src="img/dots.png" alt="">
+              </div>
+              <div class="gap">
+              <p><ins>If you save nothing, you pay nothing, no hidden charges, no upfront fee.</ins></p>
+              <p><ins>For example, if we save you total $100, we charge you $30 as our fee.</ins></p>
+            </div>
+                <div class="col">
+                  <h5><ins>Total savings</ins></h5><h5><ins>$100</ins></h5>
+                  </div>
+                  <div class="col">
+                  <h5><ins>You get</ins></h5><h5 class="green"><ins>$70</ins></h5>
+                  </div>
+                  <div class="col">
+                  <h5><ins>We get</ins></h5><h5><ins>$30</ins></h5>
+                  </div>
+                  <hr class="line">
+                  <div class="col">
+                    <img src="img/avatargroup.png" alt="">
+                    <img src="img/blankavatar.png" alt="">
+                  </div>
+              </div>
+              <div class="successrate">
+                <h3>95%</h3>
+                <p>Success Rate</p>
+              </div>
+              <div class="card nd">
+                <svg viewBox="0 0 179 179" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="89.5" cy="89.5" r="84.5" stroke="#ECF3FE" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M174 89.5C174 42.8319 136.168 5 89.5 5C42.8319 5 5 42.8319 5 89.5C5 136.168 42.8319 174 89.5 174" stroke="#46BD84" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                <div class="successrate">
+                  <h3>70%</h3>
+                  <p>You keep</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="savemoney">
+  <div class="container">
+    <h2 class="title">Start saving money in two minutes</h2>
+    <p class="subtitle">Create an account, tell us about your bills, and start saving. 
+      That's it.</p>
+      <div class="col-three">
+        <div class="card">
+          <img src="img/bill.png" alt="">
+          <h3>Upload Your Bills</h3>
+          <p>Sign up and upload a copy of the bill, and you're done!</p>
+        </div>
+        <div class="card">
+          <img src="img/piggy-bank.png" alt="">
+          <h3>Get Instant Savings</h3>
+          <p>We battle your service provider to get maximum savings on your due bill.</p>
+        </div>
+        <div class="card">
+          <img src="img/money.png" alt="">
+          <h3>You Save Money</h3>
+          <p>You save instant money which takes
+            effect within 48 hrs.</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+    <footer class="pop">
+      <div class="container">
+        <div class="col-five">
+          <div class="info logo">
+            <img src="./img/logo.png" alt="">
+          </div>
+          <div class="links"> <h3>Legal</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Carrier</a></li>
+              <li><a href="#">We are hiring</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul></div>
+          <div class="links"> <h3>Features</h3>
+            <ul>
+              <li><a href="#">Business Marketing</a></li>
+              <li><a href="#">User Analytic</a></li>
+              <li><a href="#">Live Chat</a></li>
+              <li><a href="#">Unlimited Support</a></li>
+            </ul></div>
+          <div class="links"> <h3>Resources</h3>
+            <ul>
+              <li><a href="#">IOS & Android</a></li>
+              <li><a href="#">Watch a Demo</a></li>
+              <li><a href="#">Customers</a></li>
+              <li><a href="#">API</a></li>
+            </ul></div>
+            <div class="links"> <h3>Get In Touch</h3>
+              <ul class="social">
+                <li><a href="tel:4805550103" ><div><img src="img/call.png" alt=""></div><p>(480) 555-0103</p></a></li>
+                <li><a href="tel:4805550103" ><div><img src="img/location.png" alt=""></div><p>4517 Washington Ave.</p></a></li>
+                <li><a href="mailto:debra.holt@example.com" ><div><img src="img/email.png" alt=""></div><p>debra.holt@example.com</p></a></li>
+              </ul></div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/main.js"></script>
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script> 
+<script>
+
+var timer = null;
+function addDollar(data)  {
+   var regEx = /^[$]{1}/; 
+
+    if(regEx.test(data)){
+
+    }else{
+      document.getElementById("est").value= "$"+data
+    }
+    
+
+
+  }
+  
+var timer = null;
+
+function calSavings(){
+    clearTimeout(timer); 
+    timer = setTimeout(doStuff, 1000)
+      
+
+}  
+
+function doStuff() {
+  var data = document.getElementById("est").value
+  var provider = document.getElementById("provider").value; 
+  if(provider.length==0){
+      document.getElementById("provider").style.border = "2px solid red";
+      document.getElementById("est_div").style.display= "none";
+
+  }else{
+      document.getElementById("provider").style.border = "";
+
+      if(data.length!=0){
+      amount = data.substring(1);
+      var input = parseInt(amount);
+      if(provider=='Xfinity'){
+                var result =  Math.round((23 / 10) * input);
+                
+
+      }else{
+                var result =  Math.round((17 / 10) * input );
+
+      }
+      document.getElementById("est_savings").innerHTML = "$ " + result +" / year "
+      document.getElementById("est_div").style.display= "block";
+  }else{
+          document.getElementById("est_div").style.display= "none";
+
+  }
+
+
+  }
+
+  
+      
+}
+
+function check() {
+
+         let result = document.getElementById("est").value;
+         alert(result.length);
+          if(result.length==1){
+                  document.getElementById("est").value= "";
+          }
+        
+}
+
+
+  ScrollReveal().reveal('.hero-img img',{
+    delay: 700,
+    origin: 'bottom',
+    duration: 900,
+    
+  });
+  ScrollReveal().reveal('.title', {
+    delay: 500,
+    duration: 300,
+    easing: 'ease-in-out',
+        origin: 'bottom',
+    distance: '50px',
+    
+});
+ScrollReveal().reveal('.beforetitle', {
+    delay: 500,
+    duration: 300,
+    easing: 'ease-in-out',
+        origin: 'bottom',
+    distance: '50px',
+    
+});
+ScrollReveal().reveal('.subtitle', {
+    delay: 700,
+    duration: 500,
+    easing: 'ease-in',
+        origin: 'bottom',
+        
+});
+ScrollReveal().reveal('.btnAnimate', {
+    delay: 900,
+    duration: 500,
+    easing: 'ease-in',
+});
+ScrollReveal().reveal('.calclutorr', {
+    delay: 700,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in',
+        origin: 'bottom',
+        
+});
+ScrollReveal().reveal('.header', {
+    delay: 0,
+    duration: 300,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'top',
+    distance: '100px',
+    
+});
+ScrollReveal().reveal('.pop', {
+    delay: 600,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'bottom',
+    distance: '100px',
+    
+});
+ScrollReveal().reveal('.card', {
+    delay: 600,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'bottom',
+    distance: '100px',
+    
+});
+ScrollReveal().reveal('.modal', {
+    delay: 600,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'bottom',
+    distance: '100px',
+    
+});
+ScrollReveal().reveal('.fact ul li', {
+    delay: 600,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'bottom',
+    distance: '100px',
+    
+});
+ScrollReveal().reveal('.footer', {
+    delay: 800,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'bottom',
+    distance: '100px',
+    
+});
+</script>
+  </body>
+</html>

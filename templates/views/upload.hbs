@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="./css/style.css" />
+
+  </head>
+  <body>
+    {{>header}}
+    <h4>Upload Page</h4>
+       
+
+        <form class="form contact-form" action="/users/multipleFileUpload" method="post" enctype="multipart/form-data">
+
+               
+               <div class="form-row" style="width:500px">
+
+                  <select name="serviceProvider" class="form-control" id="country-dropdown">
+                    <option value="">Select Country</option>
+                {{#each records}}
+                    <option value="{{this.name}}">{{this.name}}</option>
+                {{/each}}
+                  </select>
+                  </div>
+                  <div class="form-row">
+                    <label>Enter Things we should know</label>
+
+                    <input type="text" class="form-input username-input" name="note" id="note" >
+                  </div>
+              <div class="form-row">
+
+                  
+                  <label>Enter your Sin Number</label>
+                  <input class="form-input username-input"  type="input" name="sinNumber" id="sinNumber" required>
+                </div>
+                <div class="form-row">
+ 
+                  <label>Select your Bills</label>
+                  <input class="form-input username-input" accept="image/jpeg,image/png,image/jpg,application/pdf" type="file" name="files" id="files" multiple required>
+                  <div id="selectedFiles"></div>
+
+                  </div>
+                  <input type="submit" class="btn"/>
+        </form>
+
+        <script>
+	var selDiv = "";
+		
+	document.addEventListener("DOMContentLoaded", init, false);
+	
+	function init() {
+		document.querySelector('#files').addEventListener('change', handleFileSelect, false);
+		selDiv = document.querySelector("#selectedFiles");
+	}
+		
+	function handleFileSelect(e) {
+		
+		if(!e.target.files) return;
+		
+		selDiv.innerHTML = "";
+		
+		var files = e.target.files;
+		for(var i=0; i<files.length; i++) {
+			var f = files[i];
+			
+			selDiv.innerHTML += f.name + "<br/>";
+
+		}
+		
+	}
+	</script>
+        
+    </body>
+    </html>
