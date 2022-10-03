@@ -132,8 +132,8 @@
                 >current due bill?</span
               >
             </h1>
-            <p class="subtitle">See how much you could save with us! We guarantee  
-              savings else, we will not charge any fee.</p>
+            <p class="subtitle">Get upto 100% waiver or discount on your current due bill in 2 minutes with Billshaper.
+              </p>
           </div>
           <div class="savingform">
             <h2 class="title center">
@@ -209,37 +209,38 @@
             </div>
           </div>
           <div class="faqlist">
+            <form action="submitFAQ" method="post">
             <img src="img/Titik-titik.png" alt="">
             <h2 class="title">Ask the expert</h2>
             <p class="subtitle">Select any of the <strong>Frequently Asked Questions</strong> or choose the last option to <strong>Write Your Own</strong> question and then click <strong>‘Continue’</strong> button.</p>
             {{!-- <form id="regForm" action="/submitFAQ"  method="post" method="post"> --}}
               <div class="listbg">
                 <div class="listiteam">
-                  <label for="q1"><input class="radio" value="question1" type="radio" name="question" id="q1">
+                  <label for="q1"><input class="radio" value="How can I get discount or a waiver on my current monthly bill ?" type="radio" name="question" id="q1">
                     <span class="checkmark"></span>
                     <span class="text">How can I get discount or a waiver on my current monthly bill ?</span></label></div>
               <div class="listiteam">
-                <label for="q2"><input class="radio" value="question2" type="radio" name="question" id="q2">
+                <label for="q2"><input class="radio" value="How to avoid an Early Termination Fee (ETF) while canceling a service with agreement?" type="radio" name="question" id="q2">
                   <span class="checkmark"></span>
                   <span class="text">How to avoid an Early Termination Fee (ETF) while canceling a service with agreement?</span></label></div>
               <div class="listiteam">
-                <label for="q3"><input class="radio" value="question3" type="radio" name="question" id="q3">
+                <label for="q3"><input class="radio" value="How can I get a discount or waiver on final bill while placing a cancellation request ?" type="radio" name="question" id="q3">
                   <span class="checkmark"></span>
                   <span class="text">How can I get a discount or waiver on final bill while placing a cancellation request ?</span></label></div>
               <div class="listiteam">
-                <label for="q4"><input class="radio"  value="question4"  type="radio" name="question" id="q4">
+                <label for="q4"><input class="radio"  value="How to avoid charges for unreturned equipment/lost equipment/damaged equipment ?"  type="radio" name="question" id="q4">
                   <span class="checkmark"></span>
                   <span class="text">How to avoid charges for unreturned equipment/lost equipment/damaged equipment ?</span></label></div>
               <div class="listiteam">
-                <label for="q5"><input class="radio" value="question5"  type="radio" name="question" id="q5">
+                <label for="q5"><input class="radio" value="I am struggling to pay my current monthly bill, how can i get discount to reduce it?"  type="radio" name="question" id="q5">
                   <span class="checkmark"></span>
                   <span class="text">I am struggling to pay my current monthly bill, how can i get discount to reduce it?</span></label></div>
               <div class="listiteam">
-                <label for="q6"><input class="radio" value="question6"  type="radio" name="question" id="q6">
+                <label for="q6"><input class="radio" value="How can I get a new customer promotion with my existing services ?"  type="radio" name="question" id="q6">
                   <span class="checkmark"></span>
                   <span class="text">How can I get a new customer promotion with my existing services ?</span></label></div>
               <div class="listiteam">
-                <label for="q7"><input class="radio" value="question7" type="radio" name="question" id="q7">
+                <label for="q7"><input class="radio" value="I will write my question." type="radio" name="question" id="q7">
                   <span class="checkmark"></span>
              <span class="text">I will write my question.</span></label></div>
             </div>
@@ -254,13 +255,18 @@
                             <option style="color:black" value="{{this.name}}">{{this.name}}</option>
                 {{/each}}
                 </select> --}}
-                  <select onchange="" class="provider" name="serviceProvider" id="modelprovider">
+                {{!-- modelprovider --}}
+                  <select onchange="" class="provider" name="serviceProvider" id="">
                    <option style="color:black" value="">Select a provider</option>
                 {{#each records}}
                             <option style="color:black" value="{{this.name}}">{{this.name}}</option>
                 {{/each}}
+                
                   </select>
 
+                  <input  id="" class="btn btn-secendary" type="submit" value="Continue">
+
+            </form>
                   <div class="ifothers" id="ifothers">
 
                     <div id="forouthers" class="msgbox">

@@ -29,7 +29,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/index.css" />
     <title>Billshaper</title>
     <style>
 
@@ -325,14 +325,17 @@ textarea {
           not experience any savings.</small -->
          
      {{#if message_alert}}
+
         <form style="width:800px" id="regForm" action="/uploadQuestion" class="calclutor" method="post">
+
+                <div class="tab" >
+                      <h3 class="alert-question-color" >{{this.question}}</h3><br><br>
+                </div>
+          <div id="forouthers" class="msgbox">
+                      <p class="msg" id="msg">“Unfortunately, free assistance service is available only for companies who are listed in dropdown. Please select any other service provider or try again later, as we are trying to get assistance service for more companies”.</p>
+          </div>
+
           
-            <div class="tab" >
-                <h3 class="alert-question-color alert-question">{{this.question}}</h3><br><br>
-                  <div class="alert alert-success">
-                      {{message_alert}}
-                  </div>
-             </div>
         </form>   
       {{/if}}
 
@@ -394,14 +397,34 @@ textarea {
                 <div class="tab" >
                       <h3 class="alert-question-color" >{{this.question}}</h3><br><br>
                 </div>
-                  <div class="alert alert-success">
-                Congratulations!! We can get your service cancellation done with no ETF(early termination fee) charges. We charge only 30% of your total savings. Please fill the form to proceed or <a href="#" style="color:black;"><b>click here to know more.</b></a>                  
-                  <br><br>
+                  
             <form style="width:800px" id="regForm" action="/uploadQuestion" class="calclutor" method="post">
+
+            <div id="visibleforq2"  class="msgbox">
+                        <p class="msg gap">Congratulations!! We can get your service cancellation done with no ETF(early termination fee) charges. We charge only 30% of your total savings. Please fill the form to proceed or <strong><a href="#">click here to know more.</a></strong></p>
+                        <div class="modelform">
+                          <label for="canceldate">Cancellation date?</label>
+                          <input type="text" name="cancellation_date" id="canceldate" placeholder="dd/mm/yyyy">
+
+                          <label for="billingaddress">Final Billing address, where you want your finall bill or refund check to be sent?</label>
+                          <input type="text" name="billing_address" id="billingaddress" placeholder="Enter Billing address">
+
+                          <label for="resone">Reason for cancellation ?</label>
+                          <input type="text" name="cancellation_reason" id="resone" placeholder="Type Reason">
+
+                          <label for="email">Best email address ?</label>
+                          <input type="email" name="email_address" id="email" placeholder="name@gmail.com">
+
+                          <input type="hidden" name="user_question" id="" value="How to avoid an Early Termination Fee (ETF) while canceling a service with agreement?" />
+                          <input type="hidden" name="user_provider" id="" value="Comcast Xfinity" />
+
+                          <input id="modelbtn" class="btn btn-primary" type="submit" value="Start Saving Now"/>
+                        </div>
+                      </div>
 
             {{!-- <form class="form contact-form" action="/uploadQuestion" method="post" > --}}
 
-                <input type="hidden" name="user_question" id="" value="{{this.question}}" />
+                {{!-- <input type="hidden" name="user_question" id="" value="{{this.question}}" />
                 <input type="hidden" name="user_provider" id="" value="{{this.provider}}" />
                   <div class="form-row">
                     <label>Cancellation date? <span style="color:red;">*</span></label>
@@ -426,7 +449,7 @@ textarea {
 
                </div> 
 
-               <button type="submit" class="btn start-saving-button">Start Saving Now</button>
+               <button type="submit" class="btn start-saving-button">Start Saving Now</button> --}}
                 {{!-- <a href="/register"  class="btn btn-primary start-saving-button">Start Saving Now</a> --}}
         </form>
 

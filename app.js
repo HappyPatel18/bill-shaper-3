@@ -103,6 +103,9 @@ app.get('/progress_bar',(req,res)=>{
 })
 
 app.post('/submitFAQ',(req,res)=>{
+
+  // res.send(req.body);
+
   var QUE1 = "How can I get discount or a waiver on my current monthly bill?";
   var QUE2= "How to avoid an Early Termination Fee (ETF) while canceling a service with agreement?";
   var QUE3= "How can I get a discount or waiver on final bill while placing a cancellation request ?";
@@ -117,6 +120,7 @@ app.post('/submitFAQ',(req,res)=>{
   var provider = req.body.serviceProvider;
 
   if(provider == others){
+    
     req.flash('message_alert','"Unfortunately, free assistance service is available only for companies who are listed in dropdown. Please select any other service provider or try again later, as we are trying to get assistance service for more companies".')
     res.render("faqresponse",{message_alert:req.flash('message_alert'),question:que});
   }
