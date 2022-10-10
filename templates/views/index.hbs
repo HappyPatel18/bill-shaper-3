@@ -135,13 +135,14 @@
             <p class="subtitle">Get upto 100% waiver or discount on your current due bill in 2 minutes with Billshaper.
               </p>
           </div>
-          <div class="savingform">
+          <div class="savingform ">
+            <form class="calclutor calclutorr" action="" method="post">
             <h2 class="title center">
               <span class="text-primary">Saving</span> calculator
             </h2>
             <p class="subtitle center">See how much you could save with us! We guarantee savings else, we will not charge any fee.
             </p>
-            <form class="calclutor calclutorr" action="" method="post">
+            
               <h3>Who's your service provider?</h3>
               <select onchange="calSavings()" name="provider" id="provider" class="provider">
                 <option style="color:black" value="">Select a provider</option>
@@ -656,6 +657,7 @@ function addDollar(data)  {
   
 var timer = null;
 
+
 function calSavings(){
     clearTimeout(timer); 
     timer = setTimeout(doStuff, 1000)
@@ -676,7 +678,7 @@ function doStuff() {
       if(data.length!=0){
       amount = data.substring(1);
       var input = parseInt(amount);
-      if(provider=='Xfinity'){
+      if(provider == "Comcast Xfinity"){
                 var result =  Math.round((23 / 10) * input);
                 
 
