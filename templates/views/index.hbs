@@ -210,11 +210,12 @@
             </div>
           </div>
           <div class="faqlist">
-            <form action="submitFAQ" method="post">
+            
             <img src="img/Titik-titik.png" alt="">
             <h2 class="title">Ask the expert</h2>
             <p class="subtitle">Select any of the <strong>Frequently Asked Questions</strong> or choose the last option to <strong>Write Your Own</strong> question and then click <strong>‘Continue’</strong> button.</p>
             {{!-- <form id="regForm" action="/submitFAQ"  method="post" method="post"> --}}
+            <form action="submitFAQ" method="post">
               <div class="listbg">
                 <div class="listiteam">
                   <label for="q1"><input class="radio" value="How can I get discount or a waiver on my current monthly bill ?" type="radio" name="question" id="q1">
@@ -248,15 +249,8 @@
             <div id="myModal" class="modal">
               <div class="modal-content calclutor">
                 <span class="closemodel" id="closemodel">&times;</span>
-                {{!-- <form id="qform" class="calclutor" action="" method="post"> --}}
                   <h3>Who's your service provider?</h3>
-                  {{!-- <select   onchange="calSavings()" name="serviceProvider" id="provider"> --}}
-                {{!-- <option style="color:black" value="">Select a provider</option>
-                {{#each records}}
-                            <option style="color:black" value="{{this.name}}">{{this.name}}</option>
-                {{/each}}
-                </select> --}}
-                {{!-- modelprovider --}}
+                  
                   <select onchange="" class="provider" name="serviceProvider" id="">
                    <option style="color:black" value="">Select a provider</option>
                 {{#each records}}

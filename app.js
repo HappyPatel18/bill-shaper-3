@@ -69,7 +69,6 @@ app.post("/uploadQuestion",async(req, res) => {
 
     var data = req.body;
     // res.json(data);
-    // console.log(data);
     req.session.Question_Data = data;
     res.redirect('/register');
 })

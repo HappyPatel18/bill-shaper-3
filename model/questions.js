@@ -43,6 +43,10 @@ userid:{
     type:String,
     required:true
 },
+extranote:{
+  type:String,
+  trim:true,
+}
 
  
 });
