@@ -343,6 +343,9 @@ textarea {
         <form style="width:800px" id="regForm" action="/uploadQuestion" class="calclutor" method="post">
              <div class="tab" >
                    <h3 class="alert-question-color alert-question">{{this.question}}</h3><br><br>
+
+              <p class="msg gap">{{this.message}}</p>
+
                   <input type="hidden" name="user_question" id="User_Question" value="{{this.question}}" />
                   <input type="hidden" name="user_provider" id="" value="{{this.provider}}" />
 
@@ -364,7 +367,7 @@ textarea {
                 <input type="hidden" name="user_question" id="User_Question" value="{{this.question}}" />
               </div>
                 {{!-- <a href="/register"  class="btn btn-primary start-saving-button">Sign Up</a> --}}
-               <button type="submit" class="btn start-saving-button">Start Saving Now</button>
+               <button type="submit" class="btn start-saving-button">Sign Up</button>
 
                 <br><p class="label-message">Please sign up to Submit your question</p>
 
@@ -385,7 +388,7 @@ textarea {
                  </section>
               </div>
                {{!-- <a href="/register"  class="btn btn-primary start-saving-button">Sign Up</a> --}}
-               <button type="submit" class="btn start-saving-button">Start Saving Now</button>
+               <button type="submit" class="btn start-saving-button">Sign Up</button>
         
                 <br><p class="label-message">Please sign up to Submit your question</p>
           </form>

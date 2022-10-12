@@ -106,13 +106,13 @@ app.post('/submitFAQ',(req,res)=>{
 
   // res.send(req.body);
 
-  var QUE1 = "How can I get discount or a waiver on my current monthly bill?";
+  var QUE1 = "How can I get discount or a waiver on my current monthly bill ?";
   var QUE2= "How to avoid an Early Termination Fee (ETF) while canceling a service with agreement?";
   var QUE3= "How can I get a discount or waiver on final bill while placing a cancellation request ?";
-  var QUE4= "How to avoid charges for unreturned equipment/lost equipment/ damaged equipment ?";
-  var QUE5= "I am struggling to pay my current monthly bill, how can I get a discount to reduce it?";
-  var QUE6= "How can get a new customer promotion with my existing services?";
-  var QUE7= "I will write my question.";
+  var QUE4= "How to avoid charges for unreturned equipment/lost equipment/damaged equipment ?";
+  var QUE5= "I am struggling to pay my current monthly bill, how can i get discount to reduce it?";
+  var QUE6= "How can I get a new customer promotion with my existing services ?";
+  var QUE7= "I will write my question";
 
   var PRO = "Comcast Xfinity"
   var others= "Others"
