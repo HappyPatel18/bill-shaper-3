@@ -89,7 +89,7 @@ app.get("/show-change-password",async(req, res) => {
 });
 
 app.get("/register", (req, res) => {
-  res.render("register",{message:req.flash('message'),data:req.flash('DATA')});
+  res.render("register-2",{message:req.flash('message'),data:req.flash('DATA')});
   
 });
 
@@ -217,7 +217,7 @@ app.get("/admin/logout",(req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.render("login",{message:req.flash('message')});
+  res.render("login-2",{message:req.flash('message')});
 });
 
 app.get("/reset-password", (req, res) => {
@@ -228,7 +228,7 @@ app.get("/reset-password", (req, res) => {
 
 app.get("/home", async(req, res) => {
   const provider = await Provider.find({});
-  res.render("home",{message:req.flash('message'),records:provider});
+  res.render("home-2",{message:req.flash('message'),records:provider});
 });
 
 app.get("/upload", (req, res) => {

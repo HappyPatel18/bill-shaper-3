@@ -38,11 +38,12 @@ const createUser = asyncWrapper(async (req, res) => {
       // session=req.session;
       req.session.userId = registerUser['_id'];
       req.session.email = req.body.email;
-      req.session.firstname = req.body.firstname;
-      req.session.lastname = req.body.lastname;
+      req.session.pname = req.body.pname;
+      // req.session.firstname = req.body.firstname;
+      // req.session.lastname = req.body.lastname;
 
       const provider = await Provider.find({});
-      res.render("home",{records:provider});
+      res.render("home-2",{records:provider});
 
     }
     else{
@@ -67,7 +68,7 @@ const getProviders = asyncWrapper(async (req, res) => {
 
   const provider = await Provider.find({});
   if(provider){
-      res.render("home",{records:provider});
+      res.render("home-2",{records:provider});
   }else{
       res.send("Fail")
   }
@@ -96,11 +97,13 @@ const getUser = asyncWrapper(async (req, res) => {
             // console.log();
             req.session.userId = user._id;
             req.session.email = user.email;
-            req.session.firstname = user.firstname;
-            req.session.lastname = user.lastname;
+            req.session.pname = user.pname;
+
+            // req.session.firstname = user.firstname;
+            // req.session.lastname = user.lastname;
 
             const provider = await Provider.find({});
-            res.render("home",{records:provider});
+            res.render("home-2",{records:provider});
               // return res.status(200).json({ msg: "Login success" })
           } 
           else {

@@ -14,16 +14,22 @@ const TaskSchema = new mongoose.Schema({
     trim: true,
     maxlength: [100, "Cannot be more than 20 characters"],
   },
-  firstname: {
+  pname:{
     type: String,
+    required: [true, " Profile Name must be provided"],
     trim: true,
-    required: [true, " firstname must be provide name"],
+
   },
-  lastname: {
-    type: String,
-    trim: true,
-    required: [true, " lastname must be provide name"],
-  },
+  // firstname: {
+  //   type: String,
+  //   trim: true,
+  //   required: [true, " firstname must be provide name"],
+  // },
+  // lastname: {
+  //   type: String,
+  //   trim: true,
+  //   required: [true, " lastname must be provide name"],
+  // },
  
 });
 

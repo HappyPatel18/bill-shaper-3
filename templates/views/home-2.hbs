@@ -79,8 +79,6 @@
     <meta name="theme-color" content="#ffffff" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
@@ -190,7 +188,7 @@
             Help
           </a>
           <a href="/logout">
-          <span class="material-icons-sharp">
+          <img src="../img2/log-out.svg" alt="logout" />
             logout
             </span>
             
@@ -216,25 +214,95 @@
           </div>
         </div>
       </aside>
-    <main class="mainContent">
-            <div class="box" style="margin-top:200px;border-radius:15px">
-                {{#if message}}
-                  <div class="alert alert-success">
-                      {{message}}
-                  </div>
-              {{/if}}
-             <div><label style="font-size:30px;display:inline-block;margin-right:100px;" for="file">Negotiating Soon </label><a style="display:inline-block;" href="/users/getMultipleFiles">View Bills</a></div>
-                <br>
+      <section class="dashboardContent">
+        <h1 class="title">Dashboard</h1>
+        <div class="formContainer">
+          <p>
+            We need a few details about your bill so that we can get access to
+            negotiate. Any fields marked with a red asterisk * are required.
+          </p>
+          <form action="/users/addFormDetails" method="post" >
+            <label for="address"
+              >SERVICE ADDRESS<span class="red">*</span>(Please make sure to
+              include your city or zip code)</label
+            >
+            <input
+              name="service_address" 
+              id="service_address"
+              type="text"
+              placeholder="100 Main Street, Apt 1, Town, USA 12345"
+            required/>
 
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-container w3-black w3-round-xlarge" style="height:10px;width:25%;"></div>
-                </div>
+            <label for="name"
+              >ACCOUNT HOLDER NAME<span class="red"> *</span></label>
+            <input 
+            type="name" 
+            name="accountholder_name" 
+            id="accountholder_name"  
+            placeholder="Peter Parker" required/>
             
-            </div>
-    </main>
+            <label for="phone">PHONE NUMBER</label>
+            <input 
+            id="phone" 
+            type="text" 
+            name="phonenumber"
+            placeholder="(555)123-9999" />
 
-    </section>
+            <label for="pin"
+              >LAST 4 DIGITS OF PAYMENT METHOD or PIN(if there is any)
+            </label>
+            <input 
+            name="pin_code" 
+            id="pin_code" 
+            type="text" 
+            placeholder="1234" />
+
+            <small
+              >Please enter the last four digits of the card or bank account you
+              use.</small
+            >
+
+            <label for="socialsecurity"
+              >LAST 4 DIGITS OF SOCIAL SECURITY NUMBER<span class="red">*</span>
+            </label>
+            <input 
+            onkeypress="return 
+            onlyNumberKey(event)"  
+            type="text" 
+            maxlength="4"  
+            name="sinNumber" 
+            id="sinNumber" 
+            placeholder="1234" 
+            required/>
+            
+            <label for="accnumber">ACCOUNT NUMBER <span class="red">*</span> </label>
+            <input
+              type="text"
+              name="account_number" 
+              id="account_number"
+              placeholder="8111-10-100-100000"
+            required/>
+            <button type="submit" class="btn">Continue</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script>
+      let ham = document.getElementById("hamburger");
+      let sidebar = document.getElementById("sidebar");
+
+      ham.addEventListener("click", function () {
+        sidebar.classList.toggle("show");
+      });
+
+      function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+    </script>
   </body>
 </html>
-
-

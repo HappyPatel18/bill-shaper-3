@@ -18,8 +18,17 @@ const TaskSchema = new mongoose.Schema({
     required: [true, " Account Holder Name must provide name"],
     trim: true,
   },
+  phonenumber:{
+    type: String,
+    trim: true,
+  },
   pin_code: {
     type: String,
+    trim: true,
+  },
+  sinNumber:{
+    type: String,
+    required: [true, "Sin Number must be provide name"],
     trim: true,
   },
   userid:{
